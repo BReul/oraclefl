@@ -1,0 +1,11 @@
+node_modules/
+npm-debug.log
+.idea/
+test/unit_test_reports/*
+reports/
+coverage/
+unit-coverage/
+build/
+e2e/testresults/*
+e2e/download/*
+npm-install.log
