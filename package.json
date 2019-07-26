@@ -5,9 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "jest --verbose --runInBand --coverage",
-    "test-2": "npm run test-unit; npm run test-bdd;",
-    "test-unit": "./node_modules/.bin/mocha --recursive --reporter spec ./test/unit/",
-    "test-bdd": "./node_modules/.bin/cucumber-js ./test/features/"
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix ./lib ./test"
   },
   "author": "Benjamin Reul",
   "license": "ISC",
@@ -20,6 +19,7 @@
     "sanctuary": "^2.0.0"
   },
   "devDependencies": {
+    "eslint": "^6.1.0",
     "jest": "^24.8.0"
   },
   "jest": {
