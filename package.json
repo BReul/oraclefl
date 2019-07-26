@@ -25,7 +25,8 @@
   "jest": {
     "coverageDirectory": "./coverage",
     "collectCoverageFrom": [
-      "lib/**"
+      "lib/**",
+      "!lib/extra/**"
     ]
   }
 }
