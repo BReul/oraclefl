@@ -11,3 +11,5 @@ e2e/download/*
 npm-install.log
 lib/extra
 yarn.lock
+testIndex.js
+config.json
