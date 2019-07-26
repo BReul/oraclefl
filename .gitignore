@@ -9,3 +9,4 @@ build/
 e2e/testresults/*
 e2e/download/*
 npm-install.log
+lib/extra

@@ -1,7 +1,7 @@
 {
-  "name": "td-api",
-  "version": "1.0.0",
-  "description": "",
+  "name": "oraclefl",
+  "version": "0.1.0",
+  "description": "A fantasy-land wrapper around the node oracle library",
   "main": "index.js",
   "scripts": {
     "test": "npm run test-bdd;",
