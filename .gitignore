@@ -10,5 +10,4 @@ e2e/testresults/*
 e2e/download/*
 npm-install.log
 lib/extra
-package-lock.json
 yarn.lock
