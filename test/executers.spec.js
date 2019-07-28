@@ -3,9 +3,9 @@ const {
     executeManyOracle,
     withConnection
 } = require('../lib/executers');
-const { formatOneJson } = require('../lib/helpers');
+const { formatOneJsonCamelCase } = require('../lib/helpers');
 const { BIND_IN_STRING } = require('../lib/bindings');
-const { buildSelectOneStatement } = require('../lib/builders');
+const { buildSelectOneStatementCamelCase } = require('../lib/builders');
 const R = require('ramda');
 const mockDBreturn = {
     metaData: [
@@ -34,7 +34,7 @@ describe('executers', () => {
             const execute = jest.fn(query => Promise.resolve(mockDBreturn));
             const oracle = { execute };
             const expected = { colOne: 'val1', colTwo: 'val2' };
-            executeOracle(formatOneJson, query, binding, oracle)
+            executeOracle(formatOneJsonCamelCase, query, binding, oracle)
                 .done((err, data) => {
                     expect(data).toEqual(expected);
                     done();
@@ -50,7 +50,7 @@ describe('executers', () => {
                 bindings,
                 stack: dbErr.stack
             };
-            executeOracle(formatOneJson, query, bindings, oracle)
+            executeOracle(formatOneJsonCamelCase, query, bindings, oracle)
                 .done((err, data) => {
                     expect(err).toEqual(expected);
                     done();
@@ -100,7 +100,7 @@ describe('executers', () => {
         describe('#executeSingle', () => {
             const query = 'Select test from test';
             const bindings = {};
-            const partiallyApplied = buildSelectOneStatement(query, bindings);
+            const partiallyApplied = buildSelectOneStatementCamelCase(query, bindings);
             it('should apply a connection to a query and map the result to the either type', (done) => {
                 const execute = jest.fn(query => Promise.resolve(mockDBreturn));
                 const expected = { colOne: 'val1', colTwo: 'val2' };
@@ -130,7 +130,7 @@ describe('executers', () => {
         describe('#executeInSeries', () => {
             const query = 'Select test from test';
             const bindings = {};
-            const partiallyApplied = buildSelectOneStatement(query, bindings);
+            const partiallyApplied = buildSelectOneStatementCamelCase(query, bindings);
             const commit = jest.fn(() => Promise.resolve());
             const rollback = jest.fn(() => Promise.resolve());
             it('should apply a connection to a series of queries and map the result to the either type', (done) => {

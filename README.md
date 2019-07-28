@@ -23,6 +23,8 @@ You can use these in lieu of `executeOracle` or `executeManyOracle` if you don't
 
 Builders include:
 * `buildSelectOneStatement`
+* `buildSelectOneStatementCamelCase`
+* `buildSelectAllStatementCamelCase`
 * `buildSelectAllStatement`
 * `buildUpdateStatement`
 * `buildUpdateBatchStatement`
